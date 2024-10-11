@@ -1,0 +1,10 @@
+version: '3.8'  # Specify the version of the Compose file format
+
+services:
+  web:
+    build: .  # Build the image from the Dockerfile in the current directory
+    ports:
+      - "8080:80"  # Map port 80 in the container to port 8080 on the host
+    volumes:
+      - .:/usr/share/nginx/html  # Mount the current directory to the Nginx HTML directory
+    restart: always  # Automatically restart the container unless stopped
